@@ -30,8 +30,8 @@ With this project, you can easily track various information eg current location 
 To get started with the project, you'll need to do the following:
 
 1. Sign up for an IRCTC Rapid API account and obtain an API key.
-2. Choose plan of the IRCTC API
-3. Replace the key at each javascript file (line 4)
+2. Choose plan of the IRCTC API.
+3. Replace the key at each javascript file below the API call comment.
 4. You can add more options in input field. Check comments in HTML file for better understanding.
 
 // Using the System
