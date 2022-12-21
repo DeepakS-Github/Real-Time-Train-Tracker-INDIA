@@ -1,12 +1,3 @@
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': 'a1e0032c9amsh0c59e81fe5967c8p1e443bjsn602da0c29fd4', // Change rapidapi key here
-        'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
-    }
-};
-
-
 let stationCode8 = document.querySelector("#stationCode8");
 let tableAppend8 = document.querySelector('#tableAppend8');
 
@@ -26,6 +17,15 @@ submitbtn8.addEventListener('click',()=>{
 
         
         // API Call
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'a1e0032c9amsh0c59e81fe5967c8p1e443bjsn602da0c29fd4', // Change rapidapi key here
+                'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
+            }
+        };
+                
+
         fetch(`https://irctc1.p.rapidapi.com/api/v1/searchStation?query=${stationCode8.value}`, options)
         .then(response =>response.json())
         .then(response =>{

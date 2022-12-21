@@ -1,11 +1,3 @@
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': 'a1e0032c9amsh0c59e81fe5967c8p1e443bjsn602da0c29fd4', // Change rapidapi key here
-        'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
-    }
-};
-
 let classType2 = document.querySelector('#classType2');
 let fromCode2 = document.querySelector('#fromCode2');
 let quota2 = document.querySelector('#quota2');
@@ -31,6 +23,14 @@ submitbtn2.addEventListener('click',()=>{
 
         
         // API Call
+
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'a1e0032c9amsh0c59e81fe5967c8p1e443bjsn602da0c29fd4', // Change rapidapi key here
+                'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
+            }
+        };
 
 
         fetch(`https://irctc1.p.rapidapi.com/api/v1/checkSeatAvailability?classType=${classType2.value}&fromStationCode=${fromCode2.value}&quota=${quota2.value}&toStationCode=${toCode2.value}&trainNo=${trainNumber2.value}&date=${date2.value}`, options)

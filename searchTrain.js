@@ -1,12 +1,3 @@
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': 'a1e0032c9amsh0c59e81fe5967c8p1e443bjsn602da0c29fd4', // Change rapidapi key here
-        'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
-    }
-};
-
-
 let trainNo7 = document.querySelector("#trainNumber7");
 let tbody7 = document.querySelector('#tableAppend7');
 
@@ -29,7 +20,15 @@ button7.addEventListener('click',()=>{
 
         
         // API Call
-
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'a1e0032c9amsh0c59e81fe5967c8p1e443bjsn602da0c29fd4', // Change rapidapi key here
+                'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
+            }
+        };
+        
+        
 
         
         fetch(`https://irctc1.p.rapidapi.com/api/v1/searchTrain?query=${trainNo7.value}`, options)
