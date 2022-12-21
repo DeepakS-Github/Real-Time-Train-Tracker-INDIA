@@ -1,6 +1,6 @@
 # Real-Time-Train-Tracker-INDIA
 
-NOTE: API Key used in this project is only valid for 20 Calls per month
+NOTE: API Key used in this project is only valid for 20 Calls per month (Free Pack)
 (To use your API key read the instructions below)
 
 // Train Tracking System (INDIA)
