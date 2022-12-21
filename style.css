@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #1d3541;    ;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+
+body::-webkit-scrollbar {
+    width: 7px;
+    background-color: transparent;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #101e25;
+  border: none;
+  border-radius: 10px;
+}
+ 
+
+#btn{
+    cursor: pointer;
+}
+
+#open{
+    /* z-index: -5; */
+    cursor: pointer;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 25px;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 270px;
+    background: #101e25;
+    padding: 6px 14px;
+}
+
+.logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 250px;
+    align-items: center;
+}
+
+.logo_content .logo i{
+    font-size: 28px;
+    margin-right: 5px;
+
+}
+
+.logo_content .logo .logo_name{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sidebar #btn{
+    position: absolute;
+    color: #fff;
+    left: 90%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li{
+    position: relative;
+    list-style: none;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    line-height: 50px;
+}
+
+.sidebar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transform: all 0.4s ease;
+    border-radius: 12px;
+}
+
+.sidebar ul li a:hover{
+    color: #101e25;
+    background: #fff;
+}
+
+.sidebar ul li a i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+/* input box starts*/
+
+.container{
+    min-height: 100vh;
+    margin-left: 270px;
+    /* background: #eee; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.container form, .container .resultBox{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 600px;
+}
+
+.container form .inputBox{
+    margin-top: 20px;
+
+}
+
+.container form .inputBox span{
+    display: block;
+    color: #999;
+    padding-bottom: 5px;
+}
+
+.container form .inputBox input, .container form .inputBox select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    color: #444;
+} 
+
+
+
+.container form .flexbox{
+    display: flex;
+    gap: 15px;
+}
+
+.container form .flexbox .inputBox{
+    flex: 1 1 150px;
+}
+
+.container form .submit-btn{
+    width: 100%;
+    background: linear-gradient(45deg, blueviolet, deeppink);
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .2s linear;
+    break-before: 5px;
+    border: none;
+}
+
+.container form .submit-btn:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+} 
+
+.options{
+    margin-bottom: 5px;
+}
+
+
+/* Result Box */
+
+.resultBox{
+    margin-top: 7px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #4f546c;
+    background-color: #f9fbff;
+}
+
+table{
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px #e1e5ee;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+}
+
+table thead{
+    text-align: center;
+    box-shadow: 0 5px 10px #e1e5ee;
+}
+
+table th{
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+table td{
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+table a{
+    text-decoration: none;
+    color: #2962ff;
+}
+
+table .low{
+    border-radius: 0.2rem;
+    color: #c62828;
+    padding: 0.2rem 1rem;
+    text-align: center;
+}
+
+table .mid{
+    border-radius: 0.2rem;
+    color: #a68b00;
+    padding: 0.2rem 1rem;
+    text-align: center;
+}
+
+table .high{
+    border-radius: 0.2rem;
+    color: #388e3c;
+    padding: 5px 10px;
+    text-align: center;
+}
+/* 
+table .amount{
+    text-align: right;
+} */
+
+/* Color alternating */
+
+table tr:nth-child(even){
+    background-color: #f4f6fb;
+}
+
+.forMargin{
+    margin-top: 50px;
+}
+
+/* Rough */
+#container0,#container1,#container2,#container3,#container4,#container5,#container6,#container7{
+    display: none;
+}
+
+#container8{
+    display:flex;
+    
+}
+
+#last8{
+    color:#101e25;
+    background-color: #fff;
+}
+
+/* Banner */
+
+.banner{
+    display: none;
+}
+
+#btn{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width: 950px) {
+
+    *{
+        font-size: 12px;
+    }
+    #btn{
+        display: block;
+    }
+    
+
+    .sidebar{
+        display: none;
+    }
+    body{
+        position: relative;
+    }
+
+    .sidebar{
+        position: absolute;
+        z-index: 10;
+    }
+
+    .container{
+        margin-left: 0px;
+        /* z-index: ; */
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-75%); */
+    } 
+
+    .container form .flexbox{
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .container form .flexbox .inputBox {
+        flex: 1 1 0px;
+    }
+    
+    
+    .container form, .container .resultBox {
+        width: 350px;
+    }
+
+    table th {
+        padding: 1rem 1rem;
+    }
+
+    .banner{
+        display: block;
+        position: fixed;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%,-72%); 
+        width: 350px;
+        margin: auto;
+    }
+    .image{
+        width: 350px;
+        margin: auto;
+    }
+
+
+    
+}

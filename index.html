@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Train Tracking (INDIA)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="logo mob"><i id="open" class="fa-solid fa-bars"></i></div>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class="fa-sharp fa-solid fa-eye"></i>
+                <div class="logo_name">Train</div>
+            </div>
+            <i class="fa-solid fa-bars" id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="#" id="last8">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span class="links_name">Search Station</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="last7">
+                    <i class="fa-solid fa-train"></i>
+                    <span class="links_name">Search Train</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="last6">
+                    <i class="fa-sharp fa-solid fa-house"></i>
+                    <span class="links_name">Trains Between Stations</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="last5">
+                    <i class="fa-solid fa-location-dot"></i>
+                    
+                    <span class="links_name">Get Train Live Status</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="last4">
+                    <i class="fa-regular fa-clock"></i>
+                    <span class="links_name">Get Train Schedule</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="last3">
+                    <i class="fa-solid fa-arrow-up-9-1"></i>
+                    <span class="links_name">Get PNR Status V3</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="last2">
+                    <i class="fa-sharp fa-solid fa-chair"></i>
+                    <span class="links_name">Check Seat Availability</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="last1">
+                    <i class="fa-solid fa-train-subway"></i>
+                    <span class="links_name">Get Train Classes</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="last0">
+                    <i class="fa-regular fa-money-bill-1"></i>
+                    <span class="links_name">Get Fare</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="banner container animate__animated animate__fadeIn">
+        <img class="image" src="train_banner inovated.jpg" alt="">
+    </div>
+    
+    <!-- Search Station -->
+
+    <div class="container forMargin animate__animated animate__fadeIn" id="container8">
+        <form action="">
+                <div class="inputBox">
+                    <span>Station Code</span>
+                    <select name="" id="stationCode8">
+                        <option value="code" selected disabled>Code</option>
+                        <option value="BJU">BJU</option>
+                        <!-- Add more options here, but Note that give the value as valid station code(in capital letter) -->
+                    </select>
+                </div>
+            <input type="submit" value="submit" class="submit-btn submit-btn8">
+        </form>
+
+        <div class="resultBox resultBox8">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Station Name</th>
+                        <th>State Name</th> 
+                    </tr>
+                </thead>
+                <tbody id="tableAppend8">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+ <!-- Search Train -->
+ <div class="container forMargin animate__animated animate__fadeIn" id="container7">
+    <form action="">
+            <div class="inputBox">
+                <span>Train Number</span>
+                <select name="" id="trainNumber7">
+                    <option value="number" selected disabled>Number</option>
+                    <option value="19012">19012</option>
+                    <!-- Add more options here, but Note that give the value as valid train number -->
+                </select>
+            </div>
+        <input type="submit" value="submit" class="submit-btn submit-btn7">
+    </form>
+
+    <div class="resultBox resultBox7">
+        <table>
+            <tbody id="tableAppend7">
+                <tr>
+                    <td><a href="#">Train Number</a></td>
+                    <td class="amount">-</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Train Name</a></td>
+                    <td class="amount">-</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Route</a></td>
+                    <td class="amount">-</td>
+                </tr>
+                <tr>
+                    <td><a href="#">New Train Number</a></td>
+                    <td class="amount">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Trains Between Stations -->
+<div class="container forMargin animate__animated animate__fadeIn" id="container6">
+    <form action="">
+        <div class="flexbox">
+            <div class="inputBox">
+                <span>From Station Code</span>
+                <select name="" id="fromCode6">
+                    <option value="code" selected disabled>Code</option>
+                    <option value="bju">BJU - Barauni Junction</option>
+                    <!-- Add more options here, but Note that give the value as valid station code(in small letter) -->
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>To Station Code</span>
+                <select name="" id="toCode6">
+                    <option value="code"  selected disabled>Code</option>
+                    <option value="bdts">BDTS - Mumbai Bandra Terminus</option>
+                    <!-- Add more options here, but Note that give the value as valid station code(in small letter) -->
+                </select>
+            </div>
+        </div>
+        <input type="submit" value="submit" class="submit-btn submit-btn6">
+    </form>
+
+    <div class="resultBox resultBox6">
+        <table>
+            <thead>
+                <tr>
+                    <th>Train Number</th>
+                    <th>Train Name</th> 
+                </tr>
+            </thead>
+            <tbody id="tableAppend6">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Get Train Live Status -->
+<div class="container forMargin animate__animated animate__fadeIn" id="container5">
+    <form action="">
+            <div class="inputBox">
+                <span>Train Number</span>
+                <select name="" id="trainNumber5">
+                    <option value="number" selected disabled>Number</option>
+                    <option value="19038">19038 - Avadh Express</option>
+                    <!-- Add more options here, but Note that give the value as valid train number -->
+                </select>
+            </div>
+        <input type="submit" value="submit" class="submit-btn submit-btn5">
+    </form>
+
+    <div class="resultBox resultBox5">
+        <table>
+            <tbody id="tableAppend5">
+                <tr>
+                    <td><a href="#">Update Time</a></td>
+                    <td class="amount">-</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Source</a></td>
+                    <td class="amount">-</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Destination</a></td>
+                    <td class="amount">-</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Total Distance</a></td>
+                    <td class="amount">-</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Distance Travelled</a></td>
+                    <td class="amount">-</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Current Station</a></td>
+                    <td class="amount">-</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Current State</a></td>
+                    <td class="amount">-</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Get Train Schedule -->
+ <div class="container forMargin  animate__animated animate__fadeIn" id="container4">
+    <form action="">
+            <div class="inputBox">
+                <span>Train Number</span>
+                <select name="" id="trainNumber4">
+                    <option value="number" selected disabled>Number</option>
+                    <option value="12936">12936-Surat Bdts Express</option>
+                    <!-- Add more options here, but Note that give the value as valid train number -->
+                </select>
+            </div>
+        <input type="submit" value="submit" class="submit-btn submit-btn4">
+    </form>
+
+    <div class="resultBox resultBox4">
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Station Name</th>
+                    <th>State Name</th> 
+                </tr>
+            </thead>
+            <tbody id="tableAppend4">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Get PNR Status -->
+<div class="container forMargin animate__animated animate__fadeIn" id="container3">
+    <form action="">
+            <div class="inputBox">
+                <span>PNR Number</span>
+                <!-- eg of PNR number: 4335734389 -->
+                <input type="text" id="PNRNo3" placeholder="Number">
+            </div>
+        <input type="submit" value="submit" class="submit-btn submit-btn3">
+    </form>
+
+    <div class="resultBox resultBox3">
+        <table>
+            <tbody id="tableAppend3">
+                <tr>
+                    <td><a href="#">Train Number</a></td>
+                    <td class="amount">17221</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Train Name</a></td>
+                    <td class="amount">COA LTT EXPRESS</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Current Status</a></td>
+                    <td class="amount">CNF</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Berth Number</a></td>
+                    <td class="amount">55</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Coach ID</a></td>
+                    <td class="amount">B5</td>
+                </tr>
+                
+                <tr>
+                    <td><a href="#">Booking Date</a></td>
+                    <td class="amount">27-08-2022</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Departure Date</a></td>
+                    <td class="amount">03-09-2022</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Departure Time</a></td>
+                    <td class="amount">09:08</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Arival Date</a></td>
+                    <td class="amount">03-09-2022</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Arrival Time</a></td>
+                    <td class="amount">20:20</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Journey Duration</a></td>
+                    <td class="amount">11:12</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Expected Platform Number</a></td>
+                    <td class="amount">1</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Booking Fare</a></td>
+                    <td class="amount">855</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Ticket Fare</a></td>
+                    <td class="amount">855</td>
+                </tr>
+                
+                
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+    <!-- checkSeatAvailability -->
+    <div class="container forMargin animate__animated animate__fadeIn" id="container2">
+        <form action="">
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>Class Type</span>
+                    <select name="" id="classType2">
+                        <option value="class" selected disabled>Class</option>
+                        <option value="2A" >2A - Second AC</option>
+                        <!-- Add more options here, but Note that give the value as valid train classes -->
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>From Station Code</span>
+                    <select name="" id="fromCode2">
+                        <option value="code" selected disabled>Code</option>
+                        <option value="ST" >ST - Surat</option>
+                        <!-- Add more options here, but Note that give the value as valid train classes -->
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>Quota</span>
+                    <select name="" id="quota2">
+                        <option value="quota" selected disabled>Quota</option>
+                        <option value="GN" >GN - General</option>
+                        <!-- Add more options here, but Note that give the value as valid train classes -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>To Station Code</span>
+                    <select name="" id="toCode2">
+                        <option value="code" selected disabled>Code</option>
+                        <option value="BVI" >BVI - Borivali</option>
+                        <!-- Add more options here, but Note that give the value as valid station code(in capital letter) -->
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>Train Number</span>
+                    <select name="" id="trainNumber2">
+                        <option value="number" selected disabled>Number</option>
+                        <option value="19038" >19038</option>
+                        <!-- Add more options here, but Note that give the value as valid train number -->
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>Date</span>
+                    <select name="" id="date2">
+                        <option value="date" selected disabled>Date</option>
+                        <option value="2022-12-20" >2022-12-20</option>
+                        <!-- Add more options here, but Note that give the value as valid date -->
+                    </select>
+                </div>
+            </div>
+
+            <input type="submit" value="submit" class="submit-btn submit-btn2">
+        </form>
+
+        <div class="resultBox resultBox2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th>Confirm Probability Percentage</th> 
+                        <th>Current Status&nbsp;</th> 
+                    </tr>
+                </thead>
+                <tbody id="tableAppend2">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- getTrainClasses -->
+    <div class="container forMargin animate__animated animate__fadeIn" id="container1">
+        <form action="">
+                <div class="inputBox">
+                    <span>Train Number</span>
+                    <select name="" id="trainNumber1">
+                        <option value="number" selected disabled>Number</option>
+                        <option value="19038">19038 - Avadh Express</option>
+                        <option value="12452">12452 - Shram Shakti Express</option>
+                        <!-- Add more options here, but Note that give the value as valid train number -->
+                    </select>
+                </div>
+            <input type="submit" value="submit" class="submit-btn submit-btn1">
+        </form>
+
+        <div class="resultBox resultBox1">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Class Type</th>
+                        <th>Full Name</th> 
+                    </tr>
+                </thead>
+                <tbody id="tableAppend">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+    <!-- getFare -->
+    <div class="container forMargin animate__animated animate__fadeIn" id="container0">
+        <form action="">
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>Train Number</span>
+                    <select name="" id="trainNumber0">
+                        <option value="number" selected disabled>Number</option>
+                        <option value="19038">19038 - Avadh Express</option>
+                        <option value="12452">12452 - Shram Shakti Express</option>
+                        <!-- Add more options here, but Note that give the value as valid train number -->
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>From Station Code</span>
+                    <select name="" id="fromCode">
+                        <option value="code" selected disabled>Code</option>
+                        <option value="ST">ST - Surat</option>
+                        <option value="NDLS">NDLS - New Delhi</option>
+                        <!-- Add more options here, but Note that give the value as valid station code(in capital letter) -->
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>To Station Code</span>
+                    <select name="" id="toCode">
+                        <option value="code" selected disabled>Code</option>
+                        <option value="BVI">BVI - Borivali</option>
+                        <option value="CNB">CNB - Kanpur</option>
+                        <!-- Add more options here, but Note that give the value as valid station code(in capital letter) -->
+                    </select>
+                </div>
+            </div>
+            <input type="submit" value="submit" class="submit-btn submit-btn0">
+        </form>
+
+        <div class="resultBox resultBox0">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Class Type</th>
+                        <th>Fare (General)</th>
+                        <th>Fare (Tatkal)</th>
+                    </tr>
+                </thead>
+                <tbody id="tableAppend0">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        let btn = document.getElementById('btn');
+        let open = document.getElementById('open');
+        let sidebar = document.querySelector('.sidebar')
+        btn.addEventListener('click',()=>{
+            sidebar.style.display='none';
+        })
+        open.addEventListener('click',()=>{
+            sidebar.style.display='block';
+        })
+
+
+        let container = [0,0,0,0,0,0,0,0,0];
+        container[8] = document.getElementById('container8');
+        container[7] = document.getElementById('container7');
+        container[6] = document.getElementById('container6');
+        container[5] = document.getElementById('container5');
+        container[4] = document.getElementById('container4');
+        container[3] = document.getElementById('container3');
+        container[2] = document.getElementById('container2');
+        container[1] = document.getElementById('container1');
+        container[0] = document.getElementById('container0');
+
+
+        let last = [0,0,0,0,0,0,0,0,0];
+        last[0] = document.getElementById('last0');
+        last[1] = document.getElementById('last1');
+        last[2] = document.getElementById('last2');
+        last[3] = document.getElementById('last3');
+        last[4] = document.getElementById('last4');
+        last[5] = document.getElementById('last5');
+        last[6] = document.getElementById('last6');
+        last[7] = document.getElementById('last7');
+        last[8] = document.getElementById('last8');
+
+        let sBar = document.querySelector('.sidebar');
+
+        
+
+        last[0].addEventListener('click',()=>{
+            
+            if(screen.width<=950){
+                sBar.style.display='none';
+            }
+            for(let i=0; i<9; i++){
+                if(i!=0){
+                    container[i].style.display='none';
+                    console.log(container[i]);
+                    last[i].style.color='#fff';
+                    last[i].style.backgroundColor='#101e25';
+                }
+                else{
+                    container[i].style.display='flex';
+                    last[i].style.color='#101e25';
+                    last[i].style.backgroundColor='#fff';
+                    
+                }
+                console.log(i);
+            }
+            
+        })
+
+
+        last[1].addEventListener('click',()=>{
+            if(screen.width<=950){
+                sBar.style.display='none';
+            }
+            for(let i=0; i<9; i++){
+                if(i==1){
+                    container[i].style.display='flex';
+                    last[i].style.color='#101e25';
+                    last[i].style.backgroundColor='#fff';
+                }
+                else{
+                    container[i].style.display='none';
+                    last[i].style.color='#fff';
+                    last[i].style.backgroundColor='#101e25';
+                }
+            }
+        })
+
+        last[2].addEventListener('click',()=>{
+            if(screen.width<=950){
+                sBar.style.display='none';
+            }
+            for(let i=0; i<9; i++){
+                if(i==2){
+                    container[i].style.display='flex';
+                    last[i].style.color='#101e25';
+                    last[i].style.backgroundColor='#fff';
+                }
+                else{
+                    container[i].style.display='none';
+                    last[i].style.color='#fff';
+                    last[i].style.backgroundColor='#101e25';
+                }
+            }
+        })
+
+        last[3].addEventListener('click',()=>{
+            if(screen.width<=950){
+                sBar.style.display='none';
+            }
+            for(let i=0; i<9; i++){
+                if(i==3){
+                    container[i].style.display='flex';
+                    last[i].style.color='#101e25';
+                    last[i].style.backgroundColor='#fff';
+                }
+                else{
+                    container[i].style.display='none';
+                    last[i].style.color='#fff';
+                    last[i].style.backgroundColor='#101e25';
+                }
+            }
+        })
+
+        last[4].addEventListener('click',()=>{
+            if(screen.width<=950){
+                sBar.style.display='none';
+            }
+            for(let i=0; i<9; i++){
+                if(i==4){
+                    container[i].style.display='flex';
+                    last[i].style.color='#101e25';
+                    last[i].style.backgroundColor='#fff';
+                }
+                else{
+                    container[i].style.display='none';
+                    last[i].style.color='#fff';
+                    last[i].style.backgroundColor='#101e25';
+                }
+                
+            }
+        })
+
+        last[5].addEventListener('click',()=>{
+            if(screen.width<=950){
+                sBar.style.display='none';
+            }
+            for(let i=0; i<9; i++){
+                if(i==5){
+                    container[i].style.display='flex';
+                    last[i].style.color='#101e25';
+                    last[i].style.backgroundColor='#fff';
+                }
+                else{
+                    container[i].style.display='none';
+                    last[i].style.color='#fff';
+                    last[i].style.backgroundColor='#101e25';
+                }
+            }
+        })
+
+        last[6].addEventListener('click',()=>{
+            if(screen.width<=950){
+                sBar.style.display='none';
+            }
+            for(let i=0; i<9; i++){
+                if(i==6){
+                    container[i].style.display='flex';
+                    last[i].style.color='#101e25';
+                    last[i].style.backgroundColor='#fff';
+                }
+                else{
+                    container[i].style.display='none';
+                    last[i].style.color='#fff';
+                    last[i].style.backgroundColor='#101e25';
+                }
+            }
+        })
+
+        last[7].addEventListener('click',()=>{
+            if(screen.width<=950){
+                sBar.style.display='none';
+            }
+            for(let i=0; i<9; i++){
+                if(i==7){
+                    container[i].style.display='flex';
+                    last[i].style.color='#101e25';
+                    last[i].style.backgroundColor='#fff';
+                }
+                else{
+                    container[i].style.display='none';
+                    last[i].style.color='#fff';
+                    last[i].style.backgroundColor='#101e25';
+                }
+            }
+        })
+
+        last[8].addEventListener('click',()=>{
+            if(screen.width<=950){
+                sBar.style.display='none';
+            }
+            for(let i=0; i<9; i++){
+                if(i==8){
+                    container[i].style.display='flex';
+                    last[i].style.color='#101e25';
+                    last[i].style.backgroundColor='#fff';
+                }
+                else{
+                    container[i].style.display='none';
+                    last[i].style.color='#fff';
+                    last[i].style.backgroundColor='#101e25';
+                }
+            }
+        })
+
+        
+        
+
+
+
+    </script>
+    <script src="searchStation.js"></script>
+    <script src="searchTrain.js"></script>
+    <script src="checkSeatAvailablity.js"></script>
+    <script src="getTrainClasses.js"></script>
+    <script src="getFare.js"></script>
+    <script src="trains_between_stations.js"></script>
+    <script src="get_train_schedule.js"></script>
+    <script src="get_train_live_status.js"></script>
+    <script src="getPNRStatus.js"></script>
+    <script src="https://kit.fontawesome.com/f369254daf.js" crossorigin="anonymous"></script>
+</body>
+</html>
