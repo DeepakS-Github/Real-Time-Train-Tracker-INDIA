@@ -7,7 +7,7 @@ NOTE: API Key used in this project is only valid for 20 Calls per month (Free Pa
 
 Welcome to the Train Tracking System project! This project is a real-time train tracking system that uses the IRCTC Rapid API to show results.
 
-With this project, you can easily track the current location and status of any train in the Indian rail network. Simply enter the train number and the system will display the current location of the train, as well as its expected arrival and departure times at upcoming stations.
+With this project, you can easily track various information eg current location and status of any train in the Indian rail network. Simply enter the asked input. 
 
 // Getting Started
 
