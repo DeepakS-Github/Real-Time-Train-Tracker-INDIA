@@ -1,5 +1,8 @@
 # Real-Time-Train-Tracker-INDIA
 
+NOTE: API Key used in this project is only valid for 20 Calls per month
+(To use your API key read the instructions below)
+
 // Train Tracking System (INDIA)
 
 Welcome to the Train Tracking System project! This project is a real-time train tracking system that uses the IRCTC Rapid API to show results.
